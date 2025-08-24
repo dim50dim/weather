@@ -1,3 +1,5 @@
+"use client"
+
 import axios from "axios";
 
 import { useState } from "react";
@@ -10,7 +12,7 @@ export default function Home() {
   const [weather,setWeather] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=dublin&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=dublin&units=imperial&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
   
   const fetchWeather = (e) => {
     e.preventDefault();
@@ -20,11 +22,13 @@ export default function Home() {
          console.log(response.data);
          
     })
+     setCity("");
+     setLoading(false);
   }
 
   return (
     <div>
-          
+          <button onClick={fetchWeather}>Fetch data</button>
     </div>
   );
 }
