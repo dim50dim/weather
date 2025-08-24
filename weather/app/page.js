@@ -11,13 +11,13 @@ export default function Home() {
   const [city,setCity] = useState('')
   const [weather,setWeather] = useState({});
   const [loading, setLoading] = useState(false);
-
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=dublin&units=imperial&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`
+  const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${API_KEY}&units=metric`;
   
   const fetchWeather = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.get(url).then.apply((response) => {
+    axios.get(url).then((response) => {
          setWeather(response.data);
          console.log(response.data);
          
