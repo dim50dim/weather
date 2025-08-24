@@ -38,11 +38,11 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${AP
       </div>
                   {/* search  */}
                     <div className='relative flex justify-between items-center max-w-[500px] m-auto z-10 text-white'>
-                         <form >
+                         <form className='flex justify-between items-center w-full m-auto bg-transparent border border-gray-300 rounded-2xl ' >
                            <div>
-                            <input type="text" placeholder='Search city' />
+                            <input className='bg-transparent border-none text-white focus:outline-none text-2xl' type="text" placeholder='Search city' />
                            </div>
-                           <button><BsSearch /></button>
+                           <button onClick={fetchWeather}><BsSearch /></button>
                          </form>
                     </div>
     </div>
