@@ -37,16 +37,16 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${A
       />
       </div>
                   {/* search  */}
-                    <div className='mt-50 relative flex justify-between items-center max-w-[500px] m-auto z-10 text-white'>
+                    <div className='mt-50 relative flex justify-between  items-center max-w-[500px] m-auto z-10 text-gray-600'>
                          <form
                           onSubmit={fetchWeather}
-                         className='flex justify-between items-center w-full m-auto bg-transparent border border-gray-300 rounded-2xl ' >
+                         className='flex justify-between  items-center w-full m-auto bg-transparent border border-gray-600 rounded-2xl ' >
                            <div>
                             <input  
                             onChange={(e) => setCity(e.target.value)}
-                            className='bg-transparent border-none text-white focus:outline-none text-2xl' type="text" placeholder='Search city' />
+                            className='bg-transparent p-1  text-gray-600 focus:outline-none text-2xl' type="text" placeholder='Search city' />
                            </div>
-                           <button onClick={fetchWeather}><BsSearch size={20}/></button>
+                           <button className='p-1' onClick={fetchWeather}><BsSearch size={20}/></button>
                          </form>
                     </div>
     </div>
