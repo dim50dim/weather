@@ -49,6 +49,8 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${A
                            <button className='p-1' onClick={fetchWeather}><BsSearch size={20}/></button>
                          </form>
                     </div>
+                    {/* weather  */}
+                    
     </div>
   );
 }
