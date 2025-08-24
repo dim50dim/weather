@@ -12,7 +12,7 @@ export default function Home() {
   const [weather,setWeather] = useState({});
   const [loading, setLoading] = useState(false);
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
-const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${API_KEY}&units=metric`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
   
   const fetchWeather = (e) => {
     e.preventDefault();
@@ -38,7 +38,9 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${AP
       </div>
                   {/* search  */}
                     <div className='mt-50 relative flex justify-between items-center max-w-[500px] m-auto z-10 text-white'>
-                         <form className='flex justify-between items-center w-full m-auto bg-transparent border border-gray-300 rounded-2xl ' >
+                         <form
+                          onSubmit={fetchWeather}
+                         className='flex justify-between items-center w-full m-auto bg-transparent border border-gray-300 rounded-2xl ' >
                            <div>
                             <input  
                             onChange={(e) => setCity(e.target.value)}
