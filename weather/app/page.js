@@ -13,16 +13,18 @@ export default function Home() {
   const [weather,setWeather] = useState({});
   const [loading, setLoading] = useState(false);
   const API_KEY = process.env.NEXT_PUBLIC_WEATHER_KEY;
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${process.env.NEXT_PUBLIC_WEATHER_KEY}`;
   
   const fetchWeather = (e) => {
     e.preventDefault();
     setLoading(true);
+
     axios.get(url).then((response) => {
          setWeather(response.data);
         //  console.log(response.data);
          
     })
+
      setCity("");
      setLoading(false);
   
@@ -33,7 +35,7 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${A
    }else{
  return (
     <div>
-      
+  
       <div className='absolute top-0 left-0 right-0 bottom-0 bg-black/40 z-[1]'>
      <Image
         src="https://images.unsplash.com/photo-1693910176136-b06d8326f0e7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -60,4 +62,5 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${A
     </div>
   );
    }
-}
+
+ }

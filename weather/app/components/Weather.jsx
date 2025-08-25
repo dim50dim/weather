@@ -10,7 +10,7 @@ const Weather = ({data}) => {
     <div>
       <div>
         <div>
-          {/* <Image  alt='/' /> */}
+          <Image  alt='/' />
         </div>
       </div>
     </div>
